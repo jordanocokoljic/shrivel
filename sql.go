@@ -33,6 +33,10 @@ func Sql(dst, src []rune) int {
 	for read := 0; read < len(src); read++ {
 		char := src[read]
 
+		if char == '\r' {
+			continue
+		}
+
 		if blockDepth > 0 {
 			if char == '/' && len(src) > read+1 && src[read+1] == '*' {
 				blockDepth++
@@ -74,15 +78,11 @@ func Sql(dst, src []rune) int {
 			continue
 		}
 
-		if char == '"' || char == '\'' {
+		if isQuote(char) {
 			target = char
 		}
 
-		if char == '\r' {
-			continue
-		}
-
-		if (char == '(' || char == '"' || char == '\'') && unicode.IsSpace(dst[write-1]) {
+		if (char == '(' || isQuote(char)) && unicode.IsSpace(dst[write-1]) {
 			dst[write-1] = char
 			last = char
 			continue
@@ -102,4 +102,8 @@ func Sql(dst, src []rune) int {
 	}
 
 	return write
+}
+
+func isQuote(char rune) bool {
+	return char == '"' || char == '\''
 }
