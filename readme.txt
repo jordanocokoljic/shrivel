@@ -1,13 +1,9 @@
 Shrivel
 =======
 
-Shrivel is both a minification (but not obfuscation) tool and Go library. It
-minifies files by removing whitespace in a context-free manner. This means
-that there is no language specific parsing, shrivel will simply remove any
-unicode whitespace character as it comes across it, unless the space is
-significant (such as whitespace within strings).
+Shrivel is both a minification (but not obfuscation) tool and Go library.
 
-Currently, shrivel supports SQL.
+Currently, shrivel supports SQL and CSS.
 
 In order to install shrivel, it is easy to build from source like so:
 
