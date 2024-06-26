@@ -2,8 +2,8 @@ package shrivel
 
 import "unicode"
 
-// Sql will minify the src writing the result into dst. It wil return the
-// number of bytes written to dst. dst should be large enough to contain
+// Sql will minify the contents of src writing the result to dst. It wil return
+// the number of bytes written to dst. dst should be large enough to contain
 // the minified SQL.
 //
 // It can be used with two separate slices:
@@ -18,7 +18,7 @@ import "unicode"
 //	sql := []rune("... sql chunk ...")
 //	sql = sql[:shrivel.Sql(sql, sql)]
 //
-// Sql will not verify the validity of the SQL code provided in src.
+// Sql will not verify the validity of the SQL provided in src.
 func Sql(dst, src []rune) int {
 	var (
 		write = 0
