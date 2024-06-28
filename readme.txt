@@ -3,7 +3,7 @@ Shrivel
 
 Shrivel is both a minification (but not obfuscation) tool and Go library.
 
-Currently, shrivel supports SQL and CSS.
+Currently, shrivel supports SQL.
 
 In order to install shrivel, it is easy to build from source like so:
 
