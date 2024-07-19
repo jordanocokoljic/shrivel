@@ -1,8 +1,0 @@
-usage: shrivel [-h] [-in <path>] [-out <path>]
-
-shrivel minifies (but does not obfuscate) files. It currently supports
-SQL.
-
-Paths for input and output files can be provided. If a path is not
-provided, shrivel will read from or write to stdin and stdout
-respectively.
